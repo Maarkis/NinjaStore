@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{DECA2CE5-43F0-40D6-9D58-95EA58319407}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{31091523-F83D-4046-99D1-4D510EE96F82}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{F48B8681-46A2-4699-A458-DAFB263E575C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{1472A476-D0CB-42EE-ADE9-0DA106BBB8C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{667203A8-0E41-43CF-BBFF-387D7C0F7C6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{B292109E-B1CF-4239-B6F5-12F10E2D3AC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaStore.Domain", "src\NinjaStore.Domain\NinjaStore.Domain.csproj", "{F025B433-9070-45CF-BB7B-D93738DBFD9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaStore.Application", "src\NinjaStore.Application\NinjaStore.Application.csproj", "{E0C44962-C400-43BB-94F9-9148D4A8226C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaStore.Service", "src\NinjaStore.Service\NinjaStore.Service.csproj", "{B01210A5-5542-47DD-8388-C6EAC5D6204D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F025B433-9070-45CF-BB7B-D93738DBFD9A} = {F025B433-9070-45CF-BB7B-D93738DBFD9A}
+		{409AFE99-DA74-49A7-A13D-A7BCE99F107C} = {409AFE99-DA74-49A7-A13D-A7BCE99F107C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaStore.Infrastructure.Data", "src\NinjaStore.Infrastructure.Data\NinjaStore.Infrastructure.Data.csproj", "{409AFE99-DA74-49A7-A13D-A7BCE99F107C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaStore.Infrastructure.CrossCutting", "src\NinjaStore.Infrastructure.CrossCutting\NinjaStore.Infrastructure.CrossCutting.csproj", "{E3607259-695E-474B-81E9-4ABA63AC434A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8813B8EC-86ED-4AC3-BA74-6B545115B670}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinjaStore.DomainTest", "test\NinjaStore.DomainTest\NinjaStore.DomainTest.csproj", "{C54F3D94-7660-46F4-AAB9-3C18D0DC090E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F025B433-9070-45CF-BB7B-D93738DBFD9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F025B433-9070-45CF-BB7B-D93738DBFD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F025B433-9070-45CF-BB7B-D93738DBFD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F025B433-9070-45CF-BB7B-D93738DBFD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C44962-C400-43BB-94F9-9148D4A8226C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C44962-C400-43BB-94F9-9148D4A8226C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C44962-C400-43BB-94F9-9148D4A8226C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C44962-C400-43BB-94F9-9148D4A8226C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B01210A5-5542-47DD-8388-C6EAC5D6204D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B01210A5-5542-47DD-8388-C6EAC5D6204D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B01210A5-5542-47DD-8388-C6EAC5D6204D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B01210A5-5542-47DD-8388-C6EAC5D6204D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{409AFE99-DA74-49A7-A13D-A7BCE99F107C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{409AFE99-DA74-49A7-A13D-A7BCE99F107C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{409AFE99-DA74-49A7-A13D-A7BCE99F107C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{409AFE99-DA74-49A7-A13D-A7BCE99F107C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3607259-695E-474B-81E9-4ABA63AC434A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3607259-695E-474B-81E9-4ABA63AC434A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3607259-695E-474B-81E9-4ABA63AC434A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3607259-695E-474B-81E9-4ABA63AC434A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C54F3D94-7660-46F4-AAB9-3C18D0DC090E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C54F3D94-7660-46F4-AAB9-3C18D0DC090E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C54F3D94-7660-46F4-AAB9-3C18D0DC090E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C54F3D94-7660-46F4-AAB9-3C18D0DC090E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{667203A8-0E41-43CF-BBFF-387D7C0F7C6E} = {1472A476-D0CB-42EE-ADE9-0DA106BBB8C8}
+		{B292109E-B1CF-4239-B6F5-12F10E2D3AC8} = {1472A476-D0CB-42EE-ADE9-0DA106BBB8C8}
+		{F025B433-9070-45CF-BB7B-D93738DBFD9A} = {31091523-F83D-4046-99D1-4D510EE96F82}
+		{E0C44962-C400-43BB-94F9-9148D4A8226C} = {DECA2CE5-43F0-40D6-9D58-95EA58319407}
+		{B01210A5-5542-47DD-8388-C6EAC5D6204D} = {F48B8681-46A2-4699-A458-DAFB263E575C}
+		{409AFE99-DA74-49A7-A13D-A7BCE99F107C} = {667203A8-0E41-43CF-BBFF-387D7C0F7C6E}
+		{E3607259-695E-474B-81E9-4ABA63AC434A} = {B292109E-B1CF-4239-B6F5-12F10E2D3AC8}
+		{C54F3D94-7660-46F4-AAB9-3C18D0DC090E} = {8813B8EC-86ED-4AC3-BA74-6B545115B670}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D7B7948-C2CC-45D3-A9EB-25133C8FCCD5}
+	EndGlobalSection
+EndGlobal

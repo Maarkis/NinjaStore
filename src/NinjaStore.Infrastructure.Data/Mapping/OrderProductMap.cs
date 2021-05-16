@@ -16,6 +16,12 @@ namespace NinjaStore.Infrastructure.Data.Mapping
             builder.HasOne(s => s.Order).WithMany(s => s.Products).HasForeignKey(s => s.OrderId);
 
             builder.HasOne(s => s.Product).WithMany(s => s.Orders).HasForeignKey(s => s.ProductId);
+
+
+            //builder.HasOne(s => s.Order).WithMany(s => s.Products).HasForeignKey(s => s.OrderId).HasPrincipalKey(s => s.Id);
+
+            //builder.Property<int>("Id");
+            //builder.HasOne(s => s.Product).WithMany(s => s.Orders).HasForeignKey("Id").HasPrincipalKey(x => x.Id);
         }
     }
 }

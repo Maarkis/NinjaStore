@@ -59,11 +59,11 @@ namespace NinjaStore.DomainTest._Builder
                 Order order = OrderBuilder.NewBuilder().Build();
                 OrderProduct orderProduct = new OrderProduct
                 {
-                    Id = new Guid(),
+                    Id = i,
                     OrderId = i,
                     Order = order,
                     Product = product,
-                    ProductId = new Guid()                   
+                    ProductId = i                  
 
                 };
 

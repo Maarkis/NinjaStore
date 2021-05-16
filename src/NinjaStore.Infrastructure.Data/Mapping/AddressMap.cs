@@ -15,7 +15,8 @@ namespace NinjaStore.Infrastructure.Data.Mapping
 
             builder.HasOne(address => address.Client)
                 .WithMany(client => client.Addresses)
-                .HasForeignKey(client => client.Id);
+                .HasForeignKey(client => client.ClientId);
+
 
             builder.Property(address => address.Name)
                 .IsRequired();

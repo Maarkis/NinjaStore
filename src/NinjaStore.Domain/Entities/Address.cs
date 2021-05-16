@@ -2,7 +2,7 @@
 
 namespace NinjaStore.Domain.Entities
 {
-    public class Address : BaseEntityByGuid
+    public class Address : Entity
     {
         public string Name { get; private set; }
         public string Cep { get; private set; }
@@ -12,6 +12,11 @@ namespace NinjaStore.Domain.Entities
         public string State { get; private set; }
         public string Number { get; private set; }
         public virtual Client Client { get; private set; }
+        public int ClientId { get; private set; }
+
+        public Address()
+        {                
+        }
 
         public Address(string name, string cep, string complement, string district, string city, string state, string number)
         {

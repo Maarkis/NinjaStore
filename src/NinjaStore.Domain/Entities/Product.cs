@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace NinjaStore.Domain.Entities
 {
-    public class Product : BaseEntityByGuid
+    public class Product : Entity
     {
         public string Description { get; private set; }
         public double Value { get; private set; }

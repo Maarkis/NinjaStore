@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace NinjaStore.Domain.Entities
 {
-    public class Order : BaseEntityBySequential
+    public class Order : Entity
     {
         public virtual Client Client { get; private set; }        
         public double Amount { get; private set; }
@@ -13,6 +13,10 @@ namespace NinjaStore.Domain.Entities
         public double Value { get; private set; }
         public DateTime PurchaseDate { get; private set; }
         public virtual ICollection<OrderProduct> Products { get; private set; }
+
+        public Order()
+        {
+        }
 
         public Order(Client client, ICollection<OrderProduct> products, double amount, double discount, double value, DateTime purchaseDate)
         {

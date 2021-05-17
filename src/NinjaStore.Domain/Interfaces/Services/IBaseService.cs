@@ -8,8 +8,8 @@ namespace NinjaStore.Domain.Interfaces.Services
     {
         TEntity GetById(int id);
         IEnumerable<TEntity> Get();
-        TEntity Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
-        TEntity Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
-        void Delete(int id);
+        void Add<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+        void Update<TValidator>(TEntity obj) where TValidator : AbstractValidator<TEntity>;
+        void Delete(TEntity obj);
     }
 }

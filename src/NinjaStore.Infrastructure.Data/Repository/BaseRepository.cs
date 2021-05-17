@@ -35,11 +35,10 @@ namespace NinjaStore.Infrastructure.Data.Repository
             return _context.Set<TEntity>().ToList();
         }
 
-        public TEntity Select(Guid id)
+        public TEntity Select(int id)
         {
             return _context.Set<TEntity>().Find(id);
         }
-
         public void Update(TEntity obj)
         {
             _context.Entry(obj).State = EntityState.Modified;
@@ -55,6 +54,7 @@ namespace NinjaStore.Infrastructure.Data.Repository
             }
             GC.SuppressFinalize(this);
         }
+
 
     }
 }

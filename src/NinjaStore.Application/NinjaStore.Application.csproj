@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\NinjaStore.Domain\NinjaStore.Domain.csproj" />
     <ProjectReference Include="..\NinjaStore.Infrastructure.CrossCutting\NinjaStore.Infrastructure.CrossCutting.csproj" />
     <ProjectReference Include="..\NinjaStore.Service\NinjaStore.Service.csproj" />

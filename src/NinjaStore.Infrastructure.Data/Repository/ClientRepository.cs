@@ -12,16 +12,16 @@ namespace NinjaStore.Infrastructure.Data.Repository
 {
     public class ClientRepository : BaseRepository<Client>, IClientRepository
     {
-        private DbSet<Client> _client;
+        private DbSet<Client> _clients;
 
         public ClientRepository(DatabaseContext context, IConfiguration _configuration) : base(context, _configuration)
         {
-            _client = context.Clients;
+            _clients = context.Clients;
         }
 
         public Client GetClientByEmail(string email)
         {
-            return _client.Where(x => x.Email == email).Include(x => x.Addresses).FirstOrDefault();
+            return _clients.Where(x => x.Email == email).Include(x => x.Addresses).FirstOrDefault();
         }
     }
 }

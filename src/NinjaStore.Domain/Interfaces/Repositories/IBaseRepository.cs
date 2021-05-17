@@ -9,6 +9,6 @@ namespace NinjaStore.Domain.Interfaces.Repositories
         void Update(TEntity obj);
         void Delete(TEntity obj);
         IList<TEntity> Select();
-        TEntity Select(Guid id);
+        TEntity Select(int id);
     }
 }

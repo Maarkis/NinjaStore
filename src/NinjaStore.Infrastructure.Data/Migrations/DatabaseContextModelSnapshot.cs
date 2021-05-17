@@ -22,7 +22,9 @@ namespace NinjaStore.Infrastructure.Data.Migrations
             modelBuilder.Entity("NinjaStore.Domain.Entities.Address", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cep")
                         .IsRequired()
@@ -31,6 +33,9 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Complement")
                         .HasColumnType("nvarchar(max)");
@@ -52,6 +57,8 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ClientId");
 
                     b.ToTable("Address");
                 });
@@ -94,7 +101,7 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                     b.Property<DateTime>("PurchaseDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2021, 5, 16, 1, 19, 37, 766, DateTimeKind.Local).AddTicks(6389));
+                        .HasDefaultValue(new DateTime(2021, 5, 16, 2, 15, 19, 459, DateTimeKind.Local).AddTicks(6441));
 
                     b.Property<double>("Value")
                         .HasColumnType("float");
@@ -155,7 +162,7 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                 {
                     b.HasOne("NinjaStore.Domain.Entities.Client", "Client")
                         .WithMany("Addresses")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -40,21 +40,23 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     Cep = table.Column<string>(nullable: false),
                     Complement = table.Column<string>(nullable: true),
                     District = table.Column<string>(nullable: false),
                     City = table.Column<string>(nullable: false),
                     State = table.Column<string>(nullable: false),
-                    Number = table.Column<string>(nullable: false)
+                    Number = table.Column<string>(nullable: false),
+                    ClientId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Address", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Address_Client_Id",
-                        column: x => x.Id,
+                        name: "FK_Address_Client_ClientId",
+                        column: x => x.ClientId,
                         principalTable: "Client",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -68,7 +70,7 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                     Amount = table.Column<double>(nullable: false),
                     Discount = table.Column<double>(nullable: false),
                     Value = table.Column<double>(nullable: false),
-                    PurchaseDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2021, 5, 16, 1, 19, 37, 766, DateTimeKind.Local).AddTicks(6389))
+                    PurchaseDate = table.Column<DateTime>(nullable: false, defaultValue: new DateTime(2021, 5, 16, 2, 15, 19, 459, DateTimeKind.Local).AddTicks(6441))
                 },
                 constraints: table =>
                 {
@@ -107,6 +109,11 @@ namespace NinjaStore.Infrastructure.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Address_ClientId",
+                table: "Address",
+                column: "ClientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Client_Email",
